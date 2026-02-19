@@ -2,9 +2,9 @@ name: CI
 
 on:
   pull_request:
-    branches: [ "main" ]
+    branches: ["main"]
   push:
-    branches: [ "main" ]
+    branches: ["main"]
 
 jobs:
   test:
@@ -28,7 +28,7 @@ jobs:
         env:
           PYTHONPATH: ${{ github.workspace }}
         run: |
-          python -m pytest -q --cov=prediction_pipeline_demo --cov-report=term-missing --cov-fail-under=50
-      
+          python -m pytest -q --cov=prediction_pipeline_demo --cov-report=term-missing --cov-fail-under=70
+
       # TODO: Add a step here to run the demo pipeline end-to-end
       # The goal is to execute prediction_pipeline_demo.py so CI logs show the model’s R^2 score.
